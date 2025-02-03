@@ -45,7 +45,7 @@ export default function DashboardPage() {
               <circle cx="50" cy="50" r="20" fill="currentColor" />
             </svg>
           </div>
-          <span className="text-xl font-bold">CryptoAI</span>
+          <span className="text-xl font-bold">CryptoSage AI</span>
         </div>
         <div className="space-y-2">
           <SidebarItem icon={<Activity />} label="Dashboard" active />
@@ -61,9 +61,9 @@ export default function DashboardPage() {
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-between items-center mb-8">
             <h1 className="text-3xl font-bold">Portfolio Dashboard</h1>
-            <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+            {/* <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
               Connect Wallet
-            </button>
+            </button> */}
           </div>
 
           {/* Portfolio Overview */}
