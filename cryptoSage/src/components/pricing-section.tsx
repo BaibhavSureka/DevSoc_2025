@@ -17,10 +17,10 @@ function PricingToggle({ isYearly, setIsYearly }: PricingToggleProps) {
       </span>
       <button
         onClick={() => setIsYearly(!isYearly)}
-        className="relative w-16 h-8 rounded-full bg-gray-700 p-0.5 flex items-center justify-between"
+        className="relative w-16 h-8 rounded-full bg-gray-700 flex items-center justify-between p-1"
       >
         <div
-          className={`absolute w-7 h-7 bg-primary rounded-full transition-transform duration-300 ${
+          className={`absolute w-7 h-7 bg-purple-500 rounded-full transition-transform duration-300 ${
             isYearly ? "translate-x-8" : "translate-x-0"
           }`}
         />
@@ -58,19 +58,20 @@ function PricingCard({
 
   return (
     <div
-      className={`bg-gray-800/50 p-8 rounded-xl transform transition-all duration-300 hover:scale-105 ${
-        isPro ? "border-2 border-primary" : ""
+      className={`bg-[#1E1E2E] p-8 rounded-xl transition-all duration-300 hover:scale-105 ${
+        isPro ? "border-2 border-purple-500 shadow-lg shadow-purple-500/20" : "border border-gray-700"
       }`}
     >
       <h3 className="text-2xl font-bold text-white mb-4">{plan}</h3>
-      <div className="relative h-20">
-        <p className="absolute text-4xl font-bold text-white mb-6">
-          ${currentPrice}
+      <div className="relative h-20 flex items-center justify-center">
+        <p className="text-4xl font-bold text-white">
+          ${currentPrice} <span className="text-lg text-gray-400">/ {isYearly ? "year" : "month"}</span>
         </p>
       </div>
       <Button
-        className="w-full mb-8"
-        variant={isPro ? "default" : "secondary"}
+        className={`w-full mb-8 rounded-full ${
+          isPro ? "bg-purple-500 hover:bg-purple-600" : "bg-gray-800 hover:bg-gray-700"
+        }`}
       >
         {isPro ? "Start 30-day free trial" : "Get started"}
       </Button>
@@ -83,8 +84,8 @@ function PricingCard({
             }`}
           >
             <Check
-              className={`mr-2 ${
-                feature.included ? "text-primary" : "text-gray-600"
+              className={`mr-2 w-5 h-5 ${
+                feature.included ? "text-purple-500" : "text-gray-600"
               }`}
             />
             {feature.text}
@@ -107,6 +108,7 @@ export function PricingSection() {
           our AI-powered tools and insights.
         </p>
 
+        {/* Pricing Toggle */}
         <PricingToggle isYearly={isYearly} setIsYearly={setIsYearly} />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

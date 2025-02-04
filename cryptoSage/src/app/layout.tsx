@@ -1,9 +1,10 @@
+import { Inter } from "next/font/google"; // Use Inter instead of Mona Sans
 import "@/styles/globals.css";
-import { Inter as FontSans } from "next/font/google";
 import { cn } from "@/lib/utils";
 import Header from "@/components/header";
+import React from "react";
 
-const fontSans = FontSans({
+const fontSans = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
 });
@@ -18,14 +19,13 @@ export default function RootLayout({
       <head />
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased",
+          "min-h-screen bg-gray-900 font-sans antialiased",
           fontSans.variable
         )}
       >
         <Header />
         <main className="">{children}</main>
       </body>
-
     </html>
   );
 }

@@ -3,6 +3,8 @@ import { Check } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { PricingSection } from "@/components/pricing-section"
+import "@fortawesome/fontawesome-free/css/all.min.css";
+
 
 const HomePage = () => {
   return (
@@ -14,23 +16,23 @@ const HomePage = () => {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">AI-Powered Crypto Portfolio Management</h1>
             <ul className="space-y-4 mb-8">
               <li className="flex items-center">
-                <Check className="text-primary mr-2" />
+                <Check className="text-purple-500 text-2xl mt-1" />
                 Advanced AI algorithms for optimal trading
               </li>
               <li className="flex items-center">
-                <Check className="text-primary mr-2" />
+                            <Check className="text-purple-500 text-2xl mt-1" />
                 Real-time market insights and predictions
               </li>
               <li className="flex items-center">
-                <Check className="text-primary mr-2" />
+                            <Check className="text-purple-500 text-2xl mt-1" />
                 Secure multi-chain portfolio tracking
               </li>
             </ul>
             <div className="space-x-4">
-              <Button asChild size="lg">
+              <Button asChild size="lg" className="bg-purple-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-purple-600">
                 <Link href="/dashboard">Get started for Free</Link>
               </Button>
-              <Button variant="outline" size="lg">
+              <Button variant="outline" size="lg" className="border bg-black border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-purple-500">
                 Watch Demo
               </Button>
             </div>
@@ -74,28 +76,29 @@ const HomePage = () => {
       </section>
 
       {/* Features Section */}
+      {/* Features Section */}
       <section className="bg-[#0D1117] text-white py-20 px-6 border-t border-gray-800">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Key Features</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
-                icon: Check,
+                icon: <i className="fas fa-chart-line text-4xl text-purple-500 mb-4"></i>,
                 title: "Advanced Analytics",
                 description: "In-depth market analysis and portfolio performance tracking.",
               },
               {
-                icon: Check,
+                icon: <i className="fas fa-robot text-4xl text-purple-500 mb-4"></i>,
                 title: "AI-Powered Insights",
                 description: "Machine learning algorithms for predictive market analysis.",
               },
               {
-                icon: Check,
+                icon: <i className="fas fa-exchange-alt text-4xl text-purple-500 mb-4"></i>,
                 title: "Multi-Chain Swaps",
                 description: "Seamless asset exchanges across multiple blockchain networks.",
               },
               {
-                icon: Check,
+                icon: <i className="fas fa-shield-alt text-4xl text-purple-500 mb-4"></i>,
                 title: "Enhanced Security",
                 description: "State-of-the-art encryption and multi-factor authentication.",
               },
@@ -104,7 +107,7 @@ const HomePage = () => {
                 key={index}
                 className="bg-gray-800/50 p-6 rounded-lg transform transition-all duration-300 hover:scale-105 hover:bg-gray-700/50"
               >
-                <feature.icon className="text-4xl text-primary mb-4" />
+                {feature.icon}
                 <h3 className="text-xl font-semibold mb-4 text-white">{feature.title}</h3>
                 <p className="text-gray-400">{feature.description}</p>
               </div>
@@ -112,6 +115,7 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+
 
       {/* Portfolio Analysis Section */}
       <section className="bg-[#0D1117] py-20 px-6 border-t border-gray-800">
@@ -145,6 +149,65 @@ const HomePage = () => {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* AI Trading Section */}
+      <section className="bg-[#0D1117] py-20 px-6 border-t border-gray-800">
+        <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
+          <div className="md:w-1/2 mb-10 md:mb-0 md:pr-12">
+            <div className="text-purple-500 font-semibold mb-4">AI-POWERED TRADING</div>
+            <h2 className="text-4xl font-bold text-white mb-4">Harness the Power of AI for Smarter Trading</h2>
+            <p className="text-gray-400 mb-12">
+              Our advanced AI algorithms analyze market trends and provide intelligent trading suggestions to maximize
+              your profits.
+            </p>
+
+            <div className="space-y-8">
+              <div className="flex items-start space-x-4">
+                <Check className="text-purple-500 text-2xl mt-1" />
+                <div>
+                  <h3 className="text-xl font-semibold text-white mb-2">Predictive Analysis</h3>
+                  <p className="text-gray-400">
+                    Our AI models predict market movements with high accuracy, giving you a competitive edge.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <Check className="text-purple-500 text-2xl mt-1" />
+                <div>
+                  <h3 className="text-xl font-semibold text-white mb-2">Automated Trading</h3>
+                  <p className="text-gray-400">
+                    Set up automated trading strategies based on AI insights for 24/7 portfolio optimization.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <Check className="text-purple-500 text-2xl mt-1" />
+                <div>
+                  <h3 className="text-xl font-semibold text-white mb-2">
+                    Risk Management
+                    <span className="ml-2 text-xs bg-green-600 text-white px-2 py-1 rounded-full">AI-powered</span>
+                  </h3>
+                  <p className="text-gray-400">
+                    Our AI continuously monitors your portfolio and suggests risk mitigation strategies.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="md:w-1/2">
+            <Image
+              src="/images/trading.jpg"
+              alt="AI Trading Interface"
+              width={600}
+              height={400}
+              className="w-full rounded-lg shadow-xl"
+            />
           </div>
         </div>
       </section>
@@ -186,9 +249,34 @@ const HomePage = () => {
               </div>
             ))}
           </div>
-          <Button size="lg" className="mt-12">
+          <Button size="lg" className="mt-12 bg-purple-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-purple-600">
             Connect Your Wallet
           </Button>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="bg-[#0D1117] py-20 px-6 border-t border-gray-800">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-bold text-white text-center mb-12">What Our Users Say</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-gray-800/50 p-6 rounded-lg">
+              <p className="text-gray-300 mb-4">
+                "CryptoAI has revolutionized my trading strategy. The AI-powered insights have significantly improved my
+                portfolio performance."
+              </p>
+              <p className="font-semibold text-white">Sarah K.</p>
+              <p className="text-gray-400">Crypto Enthusiast</p>
+            </div>
+            <div className="bg-gray-800/50 p-6 rounded-lg">
+              <p className="text-gray-300 mb-4">
+                "The multi-chain portfolio tracking and automated trading features have saved me countless hours. It's a
+                game-changer for serious crypto investors."
+              </p>
+              <p className="font-semibold text-white">Michael R.</p>
+              <p className="text-gray-400">Professional Trader</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -206,15 +294,16 @@ const HomePage = () => {
             Join thousands of traders who are already leveraging the power of AI to maximize their crypto investments.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <Button size="lg" variant="secondary">
+            <button className="bg-white text-purple-700 px-6 py-3 rounded-full font-semibold hover:bg-gray-200 transition-all duration-300">
               Start Free Trial
-            </Button>
-            <Button size="lg" variant="outline">
+            </button>
+            <button className="bg-transparent border border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-black transition-all duration-300">
               Schedule a Demo
-            </Button>
+            </button>
           </div>
         </div>
       </section>
+
     </div>
   )
 }

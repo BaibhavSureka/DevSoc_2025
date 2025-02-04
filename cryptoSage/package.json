@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.7.2",
     "@headlessui/tailwindcss": "^0.2.0",
     "@langchain/core": "^0.1.55",
     "@langchain/openai": "^0.0.26",
@@ -60,6 +61,7 @@
     "recharts": "^2.12.4",
     "remark-gfm": "^4.0.0",
     "remark-math": "^6.0.0",
+    "sharp": "^0.33.5",
     "tailwind-merge": "^2.2.2",
     "tailwindcss-animate": "^1.0.7",
     "web-vitals": "^2.1.4",
