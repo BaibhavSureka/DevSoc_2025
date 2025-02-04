@@ -13,9 +13,7 @@ export default function LoginPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Add your login logic here
     console.log('Login attempt with:', email, password)
-    // Redirect to dashboard after successful login
     router.push('/dashboard')
   }
 
